@@ -1,0 +1,26 @@
+
+<div class="row">
+  <div class="col-md-6">
+   <p>
+  <strong>Name:</strong>
+  <%= @stock.name %>
+</p>
+
+<p>
+  <strong>Symbol:</strong>
+  <%= @stock.symbol %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @stock.description %>
+</p>
+
+<p>
+  <strong>Stock exchange:</strong>
+  <%= @stock.stock_exchange %>
+</p>
+<%= link_to 'Edit', edit_stock_path(@stock) %> |
+<%= link_to 'Back', stocks_path %>
+</div>
+  
