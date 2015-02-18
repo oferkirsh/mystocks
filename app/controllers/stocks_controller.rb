@@ -1,4 +1,5 @@
 class StocksController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_stock, only: [:show, :edit, :update, :destroy]
 
   # GET /stocks
@@ -69,6 +70,6 @@ class StocksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stock_params
-      params.require(:stock).permit(:name, :symbol, :description, :stock_exchange, :graph_url)
+      params.require(:stock).permit(:name, :symbol, :description, :exchange, :graph_url)
     end
 end

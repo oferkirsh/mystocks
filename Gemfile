@@ -24,6 +24,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'simple_form'
+gem 'devise'
 
 group :development, :test do
   gem 'log_buddy'
