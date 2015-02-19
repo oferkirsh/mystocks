@@ -1,6 +1,7 @@
 
 <div class="row">
-  <div class="col-md-3">
+  <div class="col-md-6">
+    <h3 class="text-left">Stock Info</h3>
    <p>
   <strong>Name:</strong>
   <%= @stock.name %>
@@ -20,10 +21,11 @@
   <strong>Exchange:</strong>
   <%= @stock.exchange %>
 </p>
-<%= link_to 'Edit', edit_stock_path(@stock) %> |
+<h3 class="text-left">Transactions</h3>
+<%= render "transactions" %>
 <%= link_to 'Back', stocks_path %>
 </div>
-  <div class="col-md-9">
+  <div class="col-md-6">
 <% if @stock.exchange == "NASDAQ" %>
   <%= javascript_tag do %>
     loadTradingView('<%= @stock.symbol %>')   

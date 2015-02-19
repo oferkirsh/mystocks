@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :transactions
+
   devise_for :users
   root "pages#home"
   

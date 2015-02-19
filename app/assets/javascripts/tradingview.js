@@ -1,7 +1,7 @@
 
 function loadTradingView(symbol) {
     new TradingView.widget({
-      "width": 998,
+      "width": 750,
       "height": 610,
       "symbol": symbol,
       "interval": "D",

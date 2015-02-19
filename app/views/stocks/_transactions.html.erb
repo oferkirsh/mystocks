@@ -1,0 +1,26 @@
+<table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Rate</th>
+          <th>Quantity</th>
+          <th>Gross Proceeds</th>
+          <th>Net Proceeds</th>
+          <th>Tax</th>
+          <th>commission</th>
+        </tr>
+      </thead>
+      <tbody>
+      	<%  @transactions.each do |transactions| %>
+        <tr>
+          <td><%= transactions.value_date %></td>
+          <td><%= humanized_money_with_symbol transactions.rate %></td>
+          <td><%= transactions.quantity %></td>
+          <td><%= humanized_money_with_symbol transactions.gross_proceeds %></td>
+          <td><%= humanized_money_with_symbol transactions.net_proceeds %></td>
+          <td><%= humanized_money_with_symbol transactions.tax %></td>
+          <td><%= humanized_money_with_symbol transactions.commission %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>

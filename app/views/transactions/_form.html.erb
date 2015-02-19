@@ -1,0 +1,18 @@
+
+<%= simple_form_for(@transaction, html: {class: "form-signin"}) do |f| %>
+  <%= f.error_notification %>
+    <%= f.input :transaction_type,collection:['Sale','Buy','Dividend'],label:false,required: true,default:'Sale' %>
+    <%= f.input :stock_id,collection:@stocks,label:false,required: true,default:'Sale' %>
+    <%= f.input :quantity,label: false, placeholder:"Quantity",required: true %>
+    <%= f.input :rate,label: false, placeholder:"Rate",required: true %>
+    <%= f.input :currency,collection: ['USD','ILS'],label: false,required: true,default:'USD' %>
+    <%= f.input :gross_proceeds,label: false, placeholder:"Gross Proceeds" %>
+    <%= f.input :tax,label: false, placeholder:"Tax",required: true %>
+    <%= f.input :commission,label: false, placeholder:"Commission"%>
+    <%= f.input :net_proceeds,label: false, placeholder:"Net Proceeds" %>
+    <%= f.input :registration_date,label: false, placeholder:"Registration Date", :as => :date_picker %>
+    <%= f.input :charge_date,label: false, placeholder:"Charge Date",:as => :date_picker %>
+    <%= f.input :value_date,label: false, placeholder:"Value Date",:as => :date_picker %>
+    <%= f.button :submit, class: "btn btn-primary btn-block" %>
+
+<% end %>

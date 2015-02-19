@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @transaction.transaction_type %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @transaction.stock.name %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @transaction.quantity %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @transaction.rate %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @transaction.currency %>
+</p>
+
+<p>
+  <strong>Gross proceeds:</strong>
+  <%= @transaction.gross_proceeds %>
+</p>
+
+<p>
+  <strong>Tax:</strong>
+  <%= @transaction.tax %>
+</p>
+
+<p>
+  <strong>Commission:</strong>
+  <%= @transaction.commission %>
+</p>
+
+<p>
+  <strong>Net proceeds:</strong>
+  <%= @transaction.net_proceeds %>
+</p>
+
+<p>
+  <strong>Registration date:</strong>
+  <%= @transaction.registration_date %>
+</p>
+
+<p>
+  <strong>Charge date:</strong>
+  <%= @transaction.charge_date %>
+</p>
+
+<p>
+  <strong>Value date:</strong>
+  <%= @transaction.value_date %>
+</p>
+
+<%= link_to 'Edit', edit_transaction_path(@transaction) %> |
+<%= link_to 'Back', transactions_path %>

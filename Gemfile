@@ -25,6 +25,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'simple_form'
 gem 'devise'
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
+gem 'momentjs-rails', '~> 2.9.0'
+gem 'money-rails'
 
 group :development, :test do
   gem 'log_buddy'

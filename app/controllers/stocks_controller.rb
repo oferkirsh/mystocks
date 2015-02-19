@@ -11,6 +11,7 @@ class StocksController < ApplicationController
   # GET /stocks/1
   # GET /stocks/1.json
   def show
+    @transactions = Transaction.where(:user_id => current_user, :stock_id => @stock.id).order(value_date: :desc)
   end
 
   # GET /stocks/new

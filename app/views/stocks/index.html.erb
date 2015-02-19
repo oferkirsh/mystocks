@@ -1,6 +1,6 @@
 <h1>Listing stocks</h1>
-
-<table>
+<p class="text-right" > <%= link_to 'New Stock', new_stock_path,:class => 'btn btn-primary btn-lg' %> </p>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
@@ -20,9 +20,9 @@
         <td><%= stock.description %></td>
         <td><%= stock.exchange %></td>
         <td><%= stock.graph_url %></td>
-        <td><%= link_to 'Show', stock %></td>
-        <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
-        <td><%= link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', stock,:class => 'btn btn-mini' %></td>
+        <td><%= link_to 'Edit', edit_stock_path(stock), :class => 'btn btn-mini' %></td>
+        <td><%= link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,3 @@
 
 <br>
 
-<%= link_to 'New Stock', new_stock_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150218142610) do
+ActiveRecord::Schema.define(version: 20150219091534) do
 
   create_table "stocks", force: true do |t|
     t.string   "name"
@@ -21,6 +21,28 @@ ActiveRecord::Schema.define(version: 20150218142610) do
     t.string   "graph_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "transactions", force: true do |t|
+    t.string   "transaction_type"
+    t.integer  "quantity"
+    t.decimal  "rate"
+    t.string   "currency"
+    t.decimal  "gross_proceeds"
+    t.decimal  "tax"
+    t.decimal  "commission"
+    t.decimal  "net_proceeds"
+    t.date     "registration_date"
+    t.date     "charge_date"
+    t.date     "value_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "stock_id"
+    t.integer  "gross_proceeds_cents", default: 0, null: false
+    t.integer  "commission_cents",     default: 0, null: false
+    t.integer  "net_proceeds_cents",   default: 0, null: false
+    t.integer  "tax_cents",            default: 0, null: false
   end
 
   create_table "users", force: true do |t|
