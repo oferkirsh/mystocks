@@ -26,7 +26,7 @@
 <%= link_to 'Back', stocks_path %>
 </div>
   <div class="col-md-6">
-<% if @stock.exchange == "NASDAQ" %>
+<% if @stock.exchange == "Nasdaq" %>
   <%= javascript_tag do %>
     loadTradingView('<%= @stock.symbol %>')   
   <% end %>

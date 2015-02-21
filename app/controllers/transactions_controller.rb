@@ -44,6 +44,6 @@ class TransactionsController < ApplicationController
     end
 
     def transaction_params
-      params.require(:transaction).permit(:type, :quantity, :rate, :currency, :gross_proceeds, :tax, :commission, :net_proceeds, :registration_date, :charge_date, :value_date, :user_id,:stock_id).merge(user_id: current_user.id)
+      params.require(:transaction).permit(:transaction_type, :quantity, :rate, :currency, :gross_proceeds, :tax, :commission, :net_proceeds, :registration_date, :charge_date, :value_date, :user_id,:stock_id).merge(user_id: current_user.id)
     end
 end

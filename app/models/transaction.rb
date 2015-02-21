@@ -6,5 +6,5 @@ class Transaction < ActiveRecord::Base
 	monetize :tax_cents, :allow_nil => true, with_model_currency: :currency
 	monetize :net_proceeds_cents, :allow_nil => true, with_model_currency: :currency
 	monetize :commission_cents, :allow_nil => true, with_model_currency: :currency
-	
+
 end
