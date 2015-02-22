@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150218193443) do
+ActiveRecord::Schema.define(version: 20150221220826) do
 
   create_table "stocks", force: true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150218193443) do
     t.string   "graph_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "active_stock", default: false
   end
 
   create_table "transactions", force: true do |t|

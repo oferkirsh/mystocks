@@ -28,6 +28,7 @@ gem 'devise'
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 gem 'momentjs-rails', '~> 2.9.0'
 gem 'money-rails'
+gem 'yahoo-finance', require: 'yahoo_finance'
 
 group :development, :test do
   gem 'log_buddy'

@@ -23,7 +23,7 @@
     <% @transactions.each do |transaction| %>
       <tr>
         <td><%= transaction.transaction_type %></td>
-        <td><%= transaction.stock.symbol || "sa" %></td>
+        <td><%= transaction.stock.symbol %></td>
         <td><%= transaction.quantity %></td>
         <td><%= transaction.rate %></td>
         <td><%= transaction.currency %></td>

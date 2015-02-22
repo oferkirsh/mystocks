@@ -1,0 +1,26 @@
+<table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Symbol</th>
+          <th>Active</th>
+          <th>Transaction Type</th>
+          <th>Transaction Date</th>
+          <th>Transaction Rate </th>
+          <th>Current Rate</th>
+          <th>diff %</th>
+        </tr>
+      </thead>
+      <tbody>
+      	<%  @nasdaq_transactions.each do |transaction| %>
+        <tr>
+          <td><%= link_to transaction.stock.symbol, stock_path( Stock.find_by_symbol(transaction.stock.symbol)) %></td>
+          <td><%= transaction.stock.active_stock %></td>
+          <td><%= transaction.transaction_type %></td>
+          <td><%= transaction.value_date %></td>
+           <td><%= transaction.rate %></td>
+           <td><%= transaction.stock.last_trade_price %></td>
+           <td><%= number_to_percentage transaction.diff_from_current_price %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
