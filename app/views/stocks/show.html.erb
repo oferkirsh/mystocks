@@ -28,7 +28,7 @@
   <div class="col-md-6 stock-right-side">
 <% if @stock.exchange == "Nasdaq" %>
   <%= javascript_tag do %>
-    $( ".stock-right-side").append(loadTradingView('<%= @stock.symbol %>'))
+    $(window).load(loadTradingView('<%= @stock.symbol %>'));
   <% end %>
 <% else %>    
   <p>

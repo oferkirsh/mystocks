@@ -10,3 +10,5 @@ stocks = Stock.create([{symbol: 'SPY', name:'SPDR S&P 500 ET',exchange:'Nasdaq'}
 {symbol: 'GLD', name:'SPDR GOLD TRUST',exchange:'Nasdaq'},{symbol: 'HACK', name:'PUREFUNDS ISE CYBER SECURITY',exchange:'Nasdaq'},
 {symbol: 'XLF', name:'Financial Select Sector SPDR ETF',exchange:'Nasdaq'},{symbol: 'QQQ', name:'PowerShares QQQ',exchange:'Nasdaq'},{symbol: 'DVY', name:'iShares Select Dividend',exchange:'Nasdaq'}, 
 {symbol: 'DIA', name:'SPDR Dow Jones Industrial Average ETF',exchange:'Nasdaq'},{symbol: 'PEJ', name:'PowerShares Dynamic Leisure & Entmnt ETF',exchange:'Nasdaq'}])
+
+

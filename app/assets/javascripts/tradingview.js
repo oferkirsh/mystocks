@@ -15,3 +15,4 @@ function loadTradingView(symbol) {
       "hideideas": true,
     });
 };
+
