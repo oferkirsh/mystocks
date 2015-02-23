@@ -2,6 +2,7 @@
       <thead>
         <tr>
           <th>Date</th>
+          <th>Type</th>
           <th>Rate</th>
           <th>Quantity</th>
           <th>Gross Proceeds</th>
@@ -14,6 +15,7 @@
       	<%  @transactions.each do |transactions| %>
         <tr>
           <td><%= transactions.value_date %></td>
+          <td><%= transactions.transaction_type %></td>
           <td><%= humanized_money_with_symbol transactions.rate %></td>
           <td><%= transactions.quantity %></td>
           <td><%= humanized_money_with_symbol transactions.gross_proceeds %></td>
