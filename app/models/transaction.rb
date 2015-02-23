@@ -13,7 +13,7 @@ class Transaction < ActiveRecord::Base
 
 	scope :from_nasdaq, -> { includes(:stock).where(stocks: { exchange:  'Nasdaq'})}
 	scope :from_tase, -> { includes(:stock).where(stocks: { exchange:  'TASE'})}
-	scope :updated_transaction, -> { order(:updated_at).group(:stock_id) }
+	scope :updated_transaction, -> { order(:updated_at).group('transactions.id, stocks.id') }
 
 	def update_stock_status
 		sale_quantity = Transaction.all.includes(:stock).where(stocks:{symbol: self.stock.symbol}).where(transaction_type: 'Sale').sum(:quantity)

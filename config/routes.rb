@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   
   resources :transactions
 
+
+  devise_scope :user do
+  get "/users/sign_up",  :to => 'pages#home'
+  get "/users/password/new",  :to => 'pages#home'
+  end
+
   devise_for :users
   root "pages#home"
   
