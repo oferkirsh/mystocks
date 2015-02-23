@@ -4,7 +4,7 @@ function loadTradingView(symbol) {
       "width": 750,
       "height": 610,
       "symbol": symbol,
-      "interval": "D",
+      "interval": "W",
       "timezone": "exchange",
       "theme": "White",
       "style": "3",

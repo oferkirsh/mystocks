@@ -13,7 +13,8 @@ class Transaction < ActiveRecord::Base
 
 	scope :from_nasdaq, -> { includes(:stock).where(stocks: { exchange:  'Nasdaq'})}
 	scope :from_tase, -> { includes(:stock).where(stocks: { exchange:  'TASE'})}
-	scope :updated_transaction, -> { order(:updated_at).group('transactions.id, stocks.id') }
+	scope :by_active_stock, -> { order('stocks.active_stock DESC') } 
+	scope :most_recent_transaction, -> { order('stocks.symbol','transactions.value_date desc').select('DISTINCT ON(stocks.symbol) *')}
 
 	def update_stock_status
 		sale_quantity = Transaction.all.includes(:stock).where(stocks:{symbol: self.stock.symbol}).where(transaction_type: 'Sale').sum(:quantity)
@@ -28,10 +29,11 @@ class Transaction < ActiveRecord::Base
 
 	def self.get_nasdaq_data_from_yahoo(transactions)
   	all_symbols = transactions.map(&:stock).map(&:symbol)
-  	data = YahooFinance.quotes(all_symbols, [:symbol,:ask_real_time,:last_trade_price], { raw: false })
+  	data = YahooFinance.quotes(all_symbols, [:symbol,:ask_real_time,:last_trade_price,:change_in_percent], { raw: false })
 	  	data.each_with_index do |stock, index|
 	  		transactions[index].stock.ask_real_time = stock.ask_real_time
 	  		transactions[index].stock.last_trade_price = stock.last_trade_price
+	  		transactions[index].stock.change_in_percent = stock.change_in_percent
 	  	end
   	transactions
   	end

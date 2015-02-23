@@ -7,7 +7,8 @@
           <th>Transaction Date</th>
           <th>Transaction Rate </th>
           <th>Current Rate</th>
-          <th>diff %</th>
+          <th>Rate diff</th>
+          <th>Change from yesterday</th>
         </tr>
       </thead>
       <tbody>
@@ -19,7 +20,8 @@
           <td><%= transaction.value_date %></td>
            <td><%= transaction.rate %></td>
            <td><%= transaction.stock.last_trade_price %></td>
-           <td><%= number_to_percentage transaction.diff_from_current_price %></td>
+           <td><%= number_to_percentage(transaction.diff_from_current_price * 100, precision: 2) %></td>
+           <td><%= transaction.stock.change_in_percent %></td>
         </tr>
         <% end %>
       </tbody>
