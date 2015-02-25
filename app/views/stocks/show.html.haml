@@ -1,0 +1,23 @@
+.row
+  .col-lg-6
+    %h3{:class => "text-left"} Stock Info
+    %p
+      %strong Name: 
+      =@stock.name
+    %p
+      %strong Symbol: 
+      =@stock.symbol
+    %p
+      %strong Description: 
+      =@stock.description
+    %p
+      %strong Exchange: 
+      =@stock.exchange
+    %h3{:class=>'text-left'} Transactions
+    =render "transactions"
+  .col-lg-6.stock-right-side
+    -if @stock.exchange == "Nasdaq"
+      :javascript 
+        $(window).load(loadTradingView('#{@stock.symbol}'));
+    -else
+      %p= link_to "Graph",@stock.graph_url,:target => "_blank"

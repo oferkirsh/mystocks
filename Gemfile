@@ -28,6 +28,7 @@ gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: '
 gem 'momentjs-rails', '~> 2.9.0'
 gem 'money-rails'
 gem 'yahoo-finance', require: 'yahoo_finance'
+gem 'haml'
 
 group :development, :test do
   gem 'log_buddy'
