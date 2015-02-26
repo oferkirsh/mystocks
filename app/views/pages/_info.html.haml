@@ -1,0 +1,28 @@
+%table{:class=>"table table-bordered transaction-info"}
+  %thead
+    %tr
+      %th Symbol
+      %th Active
+      %th Transaction Type
+      %th Transaction Date
+      %th Transaction Rate
+      - if nasdaq == true
+        %th Current Rate
+        %th Rate diff
+        %th Change from yesterday
+      - else
+        %th Description
+    %tbody
+      - transactions.each do |transaction| 
+        %tr
+          %td{:class=>'col-md-2'}=link_to transaction.stock.symbol, stock_path( Stock.find_by_symbol(transaction.stock.symbol))
+          %td=transaction.stock.active_stock
+          %td=transaction.transaction_type
+          %td=transaction.value_date
+          %td=humanized_money_with_symbol transaction.rate
+          - if nasdaq == true
+            %td=transaction.stock.last_trade_price
+            %td=number_to_percentage(transaction.diff_from_current_price * 100, precision: 2) unless transaction.diff_from_current_price == nil
+            %td=transaction.stock.change_in_percent
+          - else
+            %td=transaction.stock.description

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150221220826) do
+ActiveRecord::Schema.define(version: 20150226132033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20150221220826) do
   create_table "transactions", force: true do |t|
     t.string   "transaction_type"
     t.integer  "quantity"
-    t.decimal  "rate"
+    t.decimal  "rate_cents"
     t.string   "currency"
     t.decimal  "gross_proceeds_cents"
     t.decimal  "tax_cents"
