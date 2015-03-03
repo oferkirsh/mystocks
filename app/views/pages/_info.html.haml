@@ -6,12 +6,9 @@
       %th Transaction Type
       %th Transaction Date
       %th Transaction Rate
-      - if nasdaq == true
-        %th Current Rate
-        %th Rate diff
-        %th Change from yesterday
-      - else
-        %th Description
+      %th Current Rate
+      %th Rate diff
+      %th Change from yesterday
     %tbody
       - transactions.each do |transaction| 
         %tr
@@ -20,9 +17,7 @@
           %td=transaction.transaction_type
           %td=transaction.value_date
           %td=humanized_money_with_symbol transaction.rate
-          - if nasdaq == true
-            %td=transaction.stock.last_trade_price
-            %td=number_to_percentage(transaction.diff_from_current_price * 100, precision: 2) unless transaction.diff_from_current_price == nil
-            %td=transaction.stock.change_in_percent
-          - else
-            %td=transaction.stock.description
+          %td=transaction.stock.last_trade_price
+          %td=number_to_percentage(transaction.diff_from_current_price * 100, precision: 2) unless transaction.diff_from_current_price == nil
+          %td=transaction.stock.change_in_percent
+          

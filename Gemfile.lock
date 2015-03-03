@@ -99,6 +99,7 @@ GEM
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (2.4.3)
+    mini_portile (0.6.2)
     minitest (5.5.1)
     momentjs-rails (2.9.0)
       railties (>= 3.1)
@@ -112,6 +113,9 @@ GEM
       money (~> 6.5.0)
       railties (>= 3.0)
     multi_json (1.10.1)
+    netrc (0.10.3)
+    nokogiri (1.6.6.2)
+      mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
     pg (0.18.1)
     pry (0.10.1)
@@ -163,6 +167,9 @@ GEM
       json (~> 1.4)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
+    rest-client (1.7.3)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -213,6 +220,7 @@ DEPENDENCIES
   log_buddy
   momentjs-rails (~> 2.9.0)
   money-rails
+  nokogiri (~> 1.6.6.2)
   pg
   pry
   pry-byebug
@@ -223,6 +231,7 @@ DEPENDENCIES
   pry-stack_explorer
   rails (= 4.1.8)
   rails_12factor
+  rest-client (~> 1.7.3)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   simple_form

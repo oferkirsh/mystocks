@@ -29,6 +29,8 @@ gem 'momentjs-rails', '~> 2.9.0'
 gem 'money-rails'
 gem 'yahoo-finance', require: 'yahoo_finance'
 gem 'haml'
+gem 'nokogiri', '~> 1.6.6.2'
+gem 'rest-client', '~> 1.7.3'
 
 group :development, :test do
   gem 'log_buddy'

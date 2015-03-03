@@ -1,4 +1,6 @@
 class Transaction < ActiveRecord::Base
+	require 'restclient'
+
 	belongs_to :user
 	belongs_to :stock
 	
@@ -39,6 +41,17 @@ class Transaction < ActiveRecord::Base
   	transactions
   	end
 
+  	def self.get_tase_data_from_bizportal(transactions)	
+  		all_urls = transactions.map(&:stock).map(&:graph_url)
+  		all_urls.each_with_index do |url,index|
+  			doc = Nokogiri::HTML(RestClient.get(url))
+  			data = doc.xpath('//*[@id="container1"]/div[9]/div[2]/div[1]').text.split(/[\r\n]+/)
+  			transactions[index].stock.last_trade_price = data[0].gsub(/[^\d\.]/, '').to_f
+  			transactions[index].stock.change_in_percent = data[1].gsub(/[^\d\.]/, '').to_f
+  		end
+  		transactions
+  	end
+
   	def self.get_rate_diff(transactions)
   		transactions.each do |transaction|
   			transaction.diff_from_current_price = transaction.stock.last_trade_price.to_f / transaction.rate.to_f - 1
@@ -46,8 +59,13 @@ class Transaction < ActiveRecord::Base
 	transactions
   	end
 
-  	def self.prepare_online_data(transactions)
+  	def self.prepare_nasdaq_online_data(transactions)
   		transactions = get_nasdaq_data_from_yahoo(transactions)
+  		transactions = get_rate_diff(transactions)
+  	end
+
+  	def self.prepare_tase_online_data(transactions)
+  		transactions = get_tase_data_from_bizportal(transactions)
   		transactions = get_rate_diff(transactions)
   	end
 end
