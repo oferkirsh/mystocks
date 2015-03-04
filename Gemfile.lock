@@ -1,4 +1,60 @@
 GIT
+  remote: git://github.com/rspec/rspec-core.git
+  revision: 95609709de8c5df85867feda0b9573b5e53a14bd
+  branch: master
+  specs:
+    rspec-core (3.3.0.pre)
+      rspec-support (= 3.3.0.pre)
+
+GIT
+  remote: git://github.com/rspec/rspec-expectations.git
+  revision: 4081467f6bfc2e5c0d03b919a9b204c1af4e4b1a
+  branch: master
+  specs:
+    rspec-expectations (3.3.0.pre)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (= 3.3.0.pre)
+
+GIT
+  remote: git://github.com/rspec/rspec-its.git
+  revision: c51f4c4a207b943d329f36f9325324b067b4bc26
+  branch: master
+  specs:
+    rspec-its (1.2.0)
+      rspec-core (>= 3.0.0)
+      rspec-expectations (>= 3.0.0)
+
+GIT
+  remote: git://github.com/rspec/rspec-mocks.git
+  revision: b61016983d2ac53088ebee601c653f9ff5a3dab7
+  branch: master
+  specs:
+    rspec-mocks (3.3.0.pre)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (= 3.3.0.pre)
+
+GIT
+  remote: git://github.com/rspec/rspec-rails.git
+  revision: 6d1b893b936e6651fbb96771fefdefff8a7627fe
+  branch: master
+  specs:
+    rspec-rails (3.3.0.pre)
+      actionpack (>= 3.0, < 4.3)
+      activesupport (>= 3.0, < 4.3)
+      railties (>= 3.0, < 4.3)
+      rspec-core (= 3.3.0.pre)
+      rspec-expectations (= 3.3.0.pre)
+      rspec-mocks (= 3.3.0.pre)
+      rspec-support (= 3.3.0.pre)
+
+GIT
+  remote: git://github.com/rspec/rspec-support.git
+  revision: 154c598971338108457329c44d276cd1a64deded
+  branch: master
+  specs:
+    rspec-support (3.3.0.pre)
+
+GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
   revision: cd805c7217703e60ff82576525a3ba03a3c2bc35
   specs:
@@ -66,6 +122,7 @@ GEM
     coffee-script-source (1.9.0)
     columnize (0.9.0)
     commonjs (0.2.7)
+    database_cleaner (1.3.0)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     devise (3.4.1)
@@ -75,8 +132,14 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.3.0)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
     haml (4.0.6)
       tilt
     hike (1.2.3)
@@ -179,6 +242,8 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    shoulda-matchers (2.7.0)
+      activesupport (>= 3.0.0)
     simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
@@ -212,8 +277,10 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   coffee-rails (~> 4.0.0)
+  database_cleaner
   datetimepicker-rails!
   devise
+  factory_girl_rails
   haml
   jbuilder (~> 2.0)
   jquery-rails
@@ -232,8 +299,15 @@ DEPENDENCIES
   rails (= 4.1.8)
   rails_12factor
   rest-client (~> 1.7.3)
+  rspec-core!
+  rspec-expectations!
+  rspec-its!
+  rspec-mocks!
+  rspec-rails!
+  rspec-support!
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  shoulda-matchers
   simple_form
   spring
   twitter-bootstrap-rails!

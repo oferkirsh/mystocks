@@ -43,6 +43,12 @@ group :development, :test do
   gem 'awesome_print'
   gem  'pry-doc'
   gem 'spring'
+  %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support rspec-its ].each do |lib|
+  gem lib, :git => "git://github.com/rspec/#{lib}.git", :branch => 'master'
+  end
+  gem 'shoulda-matchers', require: false
+  gem "factory_girl_rails"
+  gem "database_cleaner"
 end
 
 group :production do
