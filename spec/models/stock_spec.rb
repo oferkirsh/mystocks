@@ -23,12 +23,3 @@ describe Stock do
 	  	expect(Stock.find_by(symbol: 'QQQ').active_stock).to be true
   	end
 end
-
-
-# describe 'stock_active_status' do
-#   it 'should have active_status true if transactions quantity are positive' do
-#   	nasdaq_buy = create(:nasdaq_buy_transaction, :the_stock,quantity: 400)
-#   	nasdaq_sale = create(:nasdaq_sale_transaction, :the_stock, quantity: 300)
-
-#   end
-# end

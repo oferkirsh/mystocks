@@ -2,6 +2,7 @@
   = f.error_notification
   = f.input :name,label: false, placeholder:"Stocks's Name",required: true
   = f.input :symbol,label: false, placeholder:"Symbol",required: true
+  = f.input :number,label: false, placeholder:"Number",required: true
   = f.input :description,label: false, placeholder:"Description",required: true, input_html: { rows:5}
   = f.input :exchange,collection: ['Nasdaq','TASE'],label: false,required: true,default: 'Nasdaq'
   = f.input :graph_url,label: false, placeholder:"Graph url"
